@@ -5,17 +5,14 @@ Scheduler::Scheduler(WaterPump& pump, unsigned long pumpOnDuration, unsigned lon
 
 void Scheduler::run() {
   unsigned long currentTime = millis();
-  if (pumpState) {
-    if (currentTime - lastRunTime >= pumpOnDuration) {
+
+  if (pumpState && currentTime - lastRunTime >= pumpOnDuration) {
       pump.turnOff();
       pumpState = false;
       lastRunTime = currentTime;
-    }
-  } else {
-    if (currentTime - lastRunTime >= pumpOffInterval) {
+  } else if (!pumpState && currentTime - lastRunTime >= pumpOffInterval) {
       pump.turnOn();
       pumpState = true;
       lastRunTime = currentTime;
-    }
   }
 }
