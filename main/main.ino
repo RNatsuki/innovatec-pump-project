@@ -5,7 +5,7 @@
 /*
  * Constants
  */
-const int PUMP_PIN = 12;                       // Pin to which the pump is connected
+const int PUMP_PIN = 7;                       // Pin to which the pump is connected
 const int PUMP_LED_PIN = 13;                   // Pin to which the pump LED is connected
 const unsigned long PUMP_ON_DURATION = 5000;   // Duration for which the pump should be on
 const unsigned long PUMP_OFF_INTERVAL = 10000; // Interval between pump on/off cycles
