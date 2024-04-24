@@ -5,12 +5,12 @@ WaterPump::WaterPump(int pin) : pin(pin), isOn(false) {
 }
 
 void WaterPump::turnOn() {
-  digitalWrite(pin, HIGH);
+  digitalWrite(pin, LOW);
   isOn = true;
 }
 
 void WaterPump::turnOff() {
-  digitalWrite(pin, LOW);
+  digitalWrite(pin, HIGH);
   isOn = false;
 }
 
